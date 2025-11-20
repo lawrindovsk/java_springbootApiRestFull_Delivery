@@ -2,6 +2,7 @@ package com.delivery_api.Projeto.Delivery.API;
 
 import com.delivery_api.Projeto.Delivery.API.entity.Cliente;
 import com.delivery_api.Projeto.Delivery.API.repository.ClienteRepository;
+import com.delivery_api.Projeto.Delivery.API.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,10 +12,10 @@ import java.util.Optional;
 @Component // chamando o component, para dizer ao spring = "GERENCIE ESSA CLASSE"
 public class DataLoader implements CommandLineRunner {
     @Autowired
-    private final ClienteRepository clienteRepository;
+    private final ClienteService clienteService;
 
-    public DataLoader(ClienteRepository clienteRepository){
-        this.clienteRepository = clienteRepository;
+    public DataLoader(ClienteService clienteService){
+        this.clienteService = clienteService;
     }
 
     @Override
@@ -23,11 +24,11 @@ public class DataLoader implements CommandLineRunner {
         //metodo strings ... args = siginica um array (lista) de texto (strings)
         //que o programa recebe como argumentos de linha de comando, permitindo que passe dados.
         System.out.println("+++ Carregando dados Teste +++");
-        Cliente cliente1 = new Cliente ("Elza de Jesus", "elzaJesus@gmail.com","Rua Professor Milton de Oliveira Andrade, 91", "11987654321");
-        clienteRepository.save(cliente1); //jpa cria um insert no SQL.
+        Cliente cliente1 = new Cliente ("Elza de Jesus", "julia.maciel@gmail.com","Rua Professor Milton de Oliveira Andrade, 91", "11987654321");
+        clienteService.salvar(cliente1); //jpa cria um insert no SQL.
 
         Cliente cliente2 = new Cliente("Julia Maciel", "julia.maciel@gmail.com", "Diadema", "11012345789");
-        clienteRepository.save(cliente2);
+        clienteService.salvar(cliente2);
 
         System.out.println("Usuários salvos no banco.");
     }
