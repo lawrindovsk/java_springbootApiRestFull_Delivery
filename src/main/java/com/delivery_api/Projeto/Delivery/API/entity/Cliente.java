@@ -25,9 +25,11 @@ public class Cliente {
     }
 
     // 2. Construtor com argumentos (Para o seu DataLoader funcionar)
-    public Cliente(String nome, String email) {
+    public Cliente(String nome, String email, String endereco, String telefone) {
         this.nome = nome;
         this.email = email;
+        this.endereco = endereco;
+        this.telefone = telefone;
     }
 
 
