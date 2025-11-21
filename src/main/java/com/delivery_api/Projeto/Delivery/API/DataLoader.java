@@ -24,10 +24,10 @@ public class DataLoader implements CommandLineRunner {
         //metodo strings ... args = siginica um array (lista) de texto (strings)
         //que o programa recebe como argumentos de linha de comando, permitindo que passe dados.
         System.out.println("+++ Carregando dados Teste +++");
-        Cliente cliente1 = new Cliente ("Elza de Jesus", "julia.maciel@gmail.com","Rua Professor Milton de Oliveira Andrade, 91", "11987654321");
+        Cliente cliente1 = new Cliente ("Elza de Jesus", "elza.jesus@gmail.com","São Paulo", "11987654321");
         clienteService.salvar(cliente1); //jpa cria um insert no SQL.
 
-        Cliente cliente2 = new Cliente("Julia Maciel", "julia.maciel@gmail.com", "Diadema", "11012345789");
+        Cliente cliente2 = new Cliente("Gustavo Laurindo", "gustavo.laurindo.santos@gmail.com", "Diadema", "11012345789");
         clienteService.salvar(cliente2);
 
         System.out.println("Usuários salvos no banco.");
