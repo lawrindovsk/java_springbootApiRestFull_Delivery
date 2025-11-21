@@ -1,4 +1,4 @@
-# Delivery Tech API
+# Sistema de Delivery em arquitetura RestFull API.
 Sistema de delivery desenvolvido com Spring Boot e Java 21.
 ## 🚀 Tecnologias
 - **Java 21 LTS** (versão mais recente)
