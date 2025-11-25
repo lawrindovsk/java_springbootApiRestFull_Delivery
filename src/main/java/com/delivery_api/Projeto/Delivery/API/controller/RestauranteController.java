@@ -2,6 +2,8 @@ package com.delivery_api.Projeto.Delivery.API.controller;
 
 import com.delivery_api.Projeto.Delivery.API.entity.Restaurante;
 import com.delivery_api.Projeto.Delivery.API.service.RestauranteService;
+import com.delivery_api.Projeto.Delivery.API.dto.RestauranteDTO;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +21,15 @@ public class RestauranteController {
     }
 
     @PostMapping
-    public ResponseEntity<Restaurante> cadastrar(@RequestBody Restaurante restaurante) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(restauranteService.salvar(restaurante));
+    public ResponseEntity<Restaurante> cadastrar(@Valid @RequestBody RestauranteDTO dto) {
+       Restaurante restaurante = new Restaurante();
+       restaurante.setNome(dto.nome());
+       restaurante.setCategoria(dto.categoria());
+       restaurante.setTaxaEntrega(dto.taxaEntrega());
+
+       return ResponseEntity.status(HttpStatus.CREATED)
+               .body(restauranteService.salvar(restaurante));
+       //agora ele passa o dado via https, e com a validação do DTO;
     }
 
     @GetMapping

@@ -2,7 +2,7 @@ package com.delivery_api.Projeto.Delivery.API.dto;
 
 import java.util.List;
 
-// Record é uma classe imutável perfeita para DTOs (Java 16+)
+// Record é uma classe imutável perfeita para DTOs
 public record PedidoDTO(
         Long clienteId,
         Long restauranteId,
