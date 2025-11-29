@@ -1,6 +1,7 @@
 package com.delivery_api.Projeto.Delivery.API;
 
 import com.delivery_api.Projeto.Delivery.API.entity.Cliente;
+import com.delivery_api.Projeto.Delivery.API.entity.Usuario;
 import com.delivery_api.Projeto.Delivery.API.repository.ClienteRepository;
 import com.delivery_api.Projeto.Delivery.API.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class DataLoader implements CommandLineRunner {
 
         Cliente cliente2 = new Cliente("Gustavo Laurindo", "gustavo.laurindo.santos@gmail.com", "Diadema", "11012345789");
         clienteService.salvar(cliente2);
+
+
 
         System.out.println("Usuários salvos no banco.");
     }
