@@ -1,0 +1,23 @@
+Aprender Java ou revisar conhecimento em java:
+W3Schools Java: https://www.w3schools.com/java/default.asp
+
+Ferramentas Principais:
+
+1. Git – Controle de versão. (https://git-scm.com/downloads)
+ 2. GitHub – Repositório remoto e colaboração. (Desktop https://desktop.github.com/download/)
+3. IntelliJ IDEA Community – IDE para desenvolvimento em Java. ( https://www.jetbrains.com/pt-br/idea/download/?section=windows)
+4. DBeaver – Gerenciamento de banco de dados MySQL. (https://dbeaver.io/download/)
+5. Postman – Teste de APIs REST. (https://www.postman.com/downloads/)
+6. Java 17 ou superior – Linguagem principal. (https://www.oracle.com/java/technologies/downloads/#jdk21-windows)
+7. MySQL 8 – Banco de dados relacional. (https://dev.mysql.com/downloads/mysql/8.0.html)
+8. Podman (alternativa open source ao Docker) – Containers para ambiente isolado. (https://podman.io/)
+
+Sites e configurações da IDE:
+
+9. Maven – Gerenciamento de dependências e build. 
+10. Spring Initializr – Para gerar projetos Spring Boot rapidamente. 
+11. Swagger/OpenAPI – Documentação da API. 
+12. JUnit + Mockito – Testes unitários e mocks. 
+13. Lombok – Reduz boilerplate no código Java. 
+14. Visual Studio Code (opcional) – Para edição rápida de arquivos. 
+15. CI/CD – GitHub Actions ou Jenkins para automação de deploy (OPCIONAL)
