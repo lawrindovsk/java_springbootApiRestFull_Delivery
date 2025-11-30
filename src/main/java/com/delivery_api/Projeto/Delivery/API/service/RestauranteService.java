@@ -3,6 +3,8 @@ package com.delivery_api.Projeto.Delivery.API.service;
 import com.delivery_api.Projeto.Delivery.API.exception.EntityNotFoundException;
 import com.delivery_api.Projeto.Delivery.API.entity.Restaurante;
 import com.delivery_api.Projeto.Delivery.API.repository.RestauranteRepository;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -14,10 +16,12 @@ public class RestauranteService {
     public RestauranteService(RestauranteRepository restauranteRepository){
         this.restauranteRepository = restauranteRepository;
     }
+    @Cacheable("restaurantes")
     public List<Restaurante> listarTodos() {
         return restauranteRepository.findAll();
     }
 
+    @CacheEvict(value = "restaurantes", allEntries = true) // Limpa tudo do cache "restaurantes"
     public Restaurante salvar(Restaurante restaurante){
         if (restaurante.getTaxaEntrega() == null ){
             throw new RuntimeException("Taxa de entrega é obrigatória");
