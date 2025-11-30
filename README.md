@@ -32,6 +32,7 @@ Sistema de delivery desenvolvido com Spring Boot e Java 21.
 Ideal para não precisar instalar Java na máquina.
 
 1. **Construir a imagem:**
+
    ```bash
 
    docker build -t delivery_api .
