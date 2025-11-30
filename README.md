@@ -39,7 +39,15 @@ Ideal para não precisar instalar Java na máquina.
    docker run -p 8080:8080 delivery_api
    
 
-## 📋 Endpoints 
+##📋 Endpoints 
+
+## Autenticação - Endpoint público para login e obtenção de token
+- POST /api/login - Realizar Login
+
+## Usuário Logado - Informações sobre o usuário autenticado atual
+- GET /api/me - Quem sou eu?
+
+## Monitoriamento - Endopoints para verificar a saúde da aplicação
 - GET /health - Status da aplicação (inclui versão Java)
 - GET /info - Informações/Monitoramento da aplicação
 - GET /h2-console - Console do banco H2: http://localhost:8080/h2-console;
@@ -55,7 +63,12 @@ Ideal para não precisar instalar Java na máquina.
 - GET /api/restaurantes/{restauranteId}/produtos - Cardápio do restaurante
 - POST /api/produtos - Cadastrar produto
 
-## CLientes - Gerenciamento de clientes e perfis
+## Produtos - Gerenciamento de produtos do cardápio
+- GET /api/produtos - Listar produtos
+- GET /api/restaurantes/{restauranteId}/produtos Cardápio do restaurante
+- POST /api/produtos - Cadstrar produto
+
+## Clientes - Gerenciamento de clientes e perfis
 - GET /api/clientes - Listar clientes
 - GET /api/clientes/{id} - Buscar cliente por ID
 - POST /api/clientes - Cadastrar cliente
