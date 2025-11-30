@@ -1,10 +1,7 @@
 package com.delivery_api.Projeto.Delivery.API.service;
 
 import com.delivery_api.Projeto.Delivery.API.dto.PedidoDTO;
-import com.delivery_api.Projeto.Delivery.API.entity.Cliente;
-import com.delivery_api.Projeto.Delivery.API.entity.Pedido;
-import com.delivery_api.Projeto.Delivery.API.entity.Produto;
-import com.delivery_api.Projeto.Delivery.API.entity.Restaurante;
+import com.delivery_api.Projeto.Delivery.API.entity.*;
 import com.delivery_api.Projeto.Delivery.API.repository.ClienteRepository;
 import com.delivery_api.Projeto.Delivery.API.repository.PedidoRepository;
 import com.delivery_api.Projeto.Delivery.API.repository.ProdutoRepository;
@@ -63,7 +60,7 @@ public class PedidoService {
         novoPedido.setCliente(cliente);
         novoPedido.setRestaurante(restaurante);
         novoPedido.setValorTotal(total);
-        novoPedido.setStatus("ABERTO");
+        novoPedido.setStatus(StatusPedido.ABERTO);
 
         //Salvar
         return pedidoRepository.save(novoPedido);
@@ -73,4 +70,15 @@ public class PedidoService {
         return pedidoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
     }
+    public Pedido atualizarStatus(Long id, StatusPedido novoStatus){
+        Pedido pedido = buscarPorId(id);
+
+        //aqui pode ter regras.
+        pedido.setStatus(novoStatus);
+
+        return pedidoRepository.save(pedido);
+
+    }
+
+
 }

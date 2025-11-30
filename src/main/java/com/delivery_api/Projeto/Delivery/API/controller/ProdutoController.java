@@ -2,6 +2,7 @@ package com.delivery_api.Projeto.Delivery.API.controller;
 
 import com.delivery_api.Projeto.Delivery.API.entity.Produto;
 import com.delivery_api.Projeto.Delivery.API.service.ProdutoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api") // Note que aqui usei só /api para poder variar as rotas abaixo
+@SecurityRequirement(name = "bearer-key")
 public class ProdutoController {
 
     private final ProdutoService produtoService;

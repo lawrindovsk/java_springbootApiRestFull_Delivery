@@ -4,6 +4,7 @@ import com.delivery_api.Projeto.Delivery.API.dto.LoginDTO;
 import com.delivery_api.Projeto.Delivery.API.entity.Usuario;
 import com.delivery_api.Projeto.Delivery.API.service.TokenService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/login")
+@SecurityRequirement(name = "bearer-key")
 @Tag(name = "Autenticação", description = "Endpoint para login e obtenção de token JWT") // <--- O SWAGGER VAI LER ISSO
 public class AuthController {
 
