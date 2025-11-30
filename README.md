@@ -35,8 +35,9 @@ Ideal para não precisar instalar Java na máquina.
 
    ```bash
    
-   docker run -p 8080:8080 delivery_api
    docker build -t delivery_api .
+   docker run -p 8080:8080 delivery_api
+   
 
 ## 📋 Endpoints 
 - GET /health - Status da aplicação (inclui versão Java)
