@@ -34,18 +34,39 @@ Ideal para não precisar instalar Java na máquina.
 1. **Construir a imagem:**
 
    ```bash
-
+   
+   docker run -p 8080:8080 delivery_api
    docker build -t delivery_api .
 
-## 📋 Endpoints
+## 📋 Endpoints 
 - GET /health - Status da aplicação (inclui versão Java)
-- GET /info - Informações da aplicação
-- GET /h2-console - Console do banco H2
+- GET /info - Informações/Monitoramento da aplicação
+- GET /h2-console - Console do banco H2: http://localhost:8080/h2-console;
+
+## Restaurante - Gerenciamento de restarurantes e cardápios
+- GET /api/restaurantes - Listar restaurantes cadastrados
+- GET /api/restaurantes/{id} - Buscar restaurantes por id
+- GET /api/restaurantes/categoria/{categoria} - Filtrar por categoria
+- POST /api/restaurantes - Cadastrar restaurantes
+
+## Pedidos - Gerenciamento de pedidos, status e histórico
+- GET /api/produto - Listar todos os produtos
+- GET /api/restaurantes/{restauranteId}/produtos - Cardápio do restaurante
+- POST /api/produtos - Cadastrar produto
+
+## CLientes - Gerenciamento de clientes e perfis
+- GET /api/clientes - Listar clientes
+- GET /api/clientes/{id} - Buscar cliente por ID
+- POST /api/clientes - Cadastrar cliente
 
 ## 🔧 Configuração
 - Porta: 8080
 - Banco: H2 em memória
 - Profile: development
+- //http://localhost:8080/swagger-ui.html;
+- //http://localhost:8080/h2-console;
+- //docker run -p 8080:8080 delivery_api
+
 
 # por mim: Gustavo Laurindo, lawrindovsk.
 Desenvolvido com JDK 21 e Spring Boot 3.2.x
