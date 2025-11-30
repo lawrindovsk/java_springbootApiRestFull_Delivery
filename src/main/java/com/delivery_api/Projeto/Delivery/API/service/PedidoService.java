@@ -80,5 +80,13 @@ public class PedidoService {
 
     }
 
+    public List<Pedido> listarTodos() {
+        return pedidoRepository.findAll();
+    }
+
+    public List<Pedido> listarPorCliente(Long clienteId) {
+        return pedidoRepository.findByClienteId(clienteId);
+    }
+
 
 }

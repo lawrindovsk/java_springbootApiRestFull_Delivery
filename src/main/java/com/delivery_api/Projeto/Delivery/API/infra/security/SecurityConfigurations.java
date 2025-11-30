@@ -40,6 +40,7 @@ public class SecurityConfigurations {
                     req.requestMatchers("/swagger-ui/**").permitAll();
                     req.requestMatchers("/swagger-ui.html").permitAll();
                     req.requestMatchers("/error").permitAll();
+                    req.requestMatchers("/health", "/info").permitAll();
 
                     // Login e Cadastro
                     req.requestMatchers(HttpMethod.POST, "/api/login").permitAll();

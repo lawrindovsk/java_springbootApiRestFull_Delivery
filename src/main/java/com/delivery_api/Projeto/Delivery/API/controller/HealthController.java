@@ -1,5 +1,8 @@
 package com.delivery_api.Projeto.Delivery.API.controller;
+
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,11 +10,12 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @RestController
-@SecurityRequirement(name = "bearer-key")
+@Tag(name = "Monitoramento", description = "Endpoints para verificar a saúde da aplicação")
+@SecurityRequirement(name = "bearer-key") // No momento, exige token pois não está no permitAll
 public class HealthController {
 
-
     @GetMapping("/health")
+    @Operation(summary = "Status da API", description = "Verifica se a aplicação está no ar (Health Check).")
     public Map<String, String> health() {
         return Map.of(
                 "status", "UP",
@@ -21,19 +25,18 @@ public class HealthController {
         );
     }
 
-
     @GetMapping("/info")
+    @Operation(summary = "Informações da API", description = "Retorna versão e detalhes do desenvolvedor.")
     public AppInfo info() {
         return new AppInfo(
                 "Delivery Tech API",
                 "1.0.0",
-                "lawrindovsk",
+                "Gustavo Laurindo",
                 "JDK 21",
-                "Spring Boot 3.2.x"
+                "Spring Boot 3"
         );
     }
 
-    // Record para demonstrar recurso do Java 14+ (disponível no JDK 21)
     public record AppInfo(
             String application,
             String version,
@@ -41,6 +44,4 @@ public class HealthController {
             String javaVersion,
             String framework
     ) {}
-
-
 }
