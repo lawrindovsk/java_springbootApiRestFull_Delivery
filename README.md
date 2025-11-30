@@ -77,9 +77,9 @@ Ideal para não precisar instalar Java na máquina.
 - Porta: 8080
 - Banco: H2 em memória
 - Profile: development
-- //http://localhost:8080/swagger-ui.html;
-- //http://localhost:8080/h2-console;
-- //docker run -p 8080:8080 delivery_api
+- //http://localhost:8080/swagger-ui.html
+- //http://localhost:8080/h2-console
+- docker run -p 8080:8080 delivery_api (Rodar no terminal)
 
 
 # por mim: Gustavo Laurindo, lawrindovsk.
