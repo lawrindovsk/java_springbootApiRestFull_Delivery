@@ -6,6 +6,7 @@ import org.springframework.cache.annotation.EnableCaching;
 
 //http://localhost:8080/swagger-ui.html;
 //http://localhost:8080/h2-console;
+//docker run -p 8080:8080 delivery-api
 
 @EnableCaching
 @SpringBootApplication
