@@ -50,7 +50,7 @@ Ideal para não precisar instalar Java na máquina.
 ## Monitoriamento - Endopoints para verificar a saúde da aplicação
 - GET /health - Status da aplicação (inclui versão Java)
 - GET /info - Informações/Monitoramento da aplicação
-- GET /h2-console - Console do banco H2: http://localhost:8080/h2-console;
+- GET /h2-console - Console do banco H2: http://localhost:8080/h2-console
 
 ## Restaurante - Gerenciamento de restarurantes e cardápios
 - GET /api/restaurantes - Listar restaurantes cadastrados
